@@ -1,0 +1,23 @@
+def fun(a,b,c):
+    # Create a function
+    div=a/b # divide the Value
+    r="{0:.1000000f}".format(div) # use a format function for the value after the point of decimal to 1000000 we change the value according to the constraint
+    t=r.split(".") # split the decimal value for using after the point value
+    s=t[1] # take the value after the point which is store in the list t
+    s=str(s) # convert the int value  to str for iteration
+    d={} # declare a empty dictionary
+    for i in range(1,10): # This loop is used for store in the key according to the format
+        if i not in d: # check the condition
+            d[i]=0 # store the value of the key is 0
+    for i in range(1): # second loop is used 
+        d[i]=0 # store the value of the key is 0
+
+    for i in range(c): # used this loop for store the value in the dictionary
+        if int(s[i]) not in d:
+            d[int(s[i])]=1
+        else:
+            d[int(s[i])]+=1
+    
+    return d
+a,b,c=map(int,input().split(' '))
+print(fun(a,b,c))
